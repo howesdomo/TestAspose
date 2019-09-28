@@ -40,8 +40,7 @@ namespace TestInteropExcelWpfApp
                 {
                     excelApp.Open(filePath);
                     string workSheetName = excelApp.WorksheetName;
-                    string msg = "{0}".FormatWith(workSheetName);
-                    System.Diagnostics.Debug.WriteLine(msg);
+                    System.Diagnostics.Debug.WriteLine(workSheetName);
 
 
                     excelApp.Print(isLandscape: true);
@@ -52,8 +51,7 @@ namespace TestInteropExcelWpfApp
                 MessageBox.Show(ex.GetFullInfo());
             }
 
-            string msg2 = "{0}".FormatWith("方法运行结束");
-            System.Diagnostics.Debug.WriteLine(msg2);
+            System.Diagnostics.Debug.WriteLine("方法运行结束");
         }
     }
 }

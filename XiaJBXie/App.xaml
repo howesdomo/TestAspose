@@ -1,0 +1,12 @@
+﻿<Application x:Class="XiaJBXie.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:XiaJBXie"
+             StartupUri="FrmConcurrentTest.xaml">
+
+    <!--StartupUri="MainWindow.xaml">-->
+    <!--StartupUri="FrmTestFormula.xaml">-->
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

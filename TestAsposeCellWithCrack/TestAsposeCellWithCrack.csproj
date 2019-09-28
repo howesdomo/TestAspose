@@ -61,6 +61,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DLL\Aspose.Cells.dll" />
+    <None Include="DLL\Aspose.Cells_9.0.0_Crack.dll" />
     <Content Include="TestAspose2.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -80,12 +82,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\HoweUtil\Util\Util.csproj">
-      <Project>{3363da83-f692-4367-b905-062451aca009}</Project>
-      <Name>Util</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

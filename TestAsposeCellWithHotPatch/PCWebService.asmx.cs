@@ -25,6 +25,12 @@ namespace TestAsposeCellWithHotPatch
         }
 
         [WebMethod]
+        public bool ApsoseCells_IsLicensed()
+        {
+            return Util.Excel.ExcelUtils_Aspose.IsLicensed();
+        }
+
+        [WebMethod]
         public string ReadWriteExcel()
         {
             string path = this.Server.MapPath("~/" + "Test");
