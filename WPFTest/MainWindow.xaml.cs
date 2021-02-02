@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -32,6 +33,7 @@ namespace WPFTest
         private void initEvent()
         {
             btnImport.Click += BtnImport_Click;
+            btnExport.Click += BtnExport_Click;
         }
 
         private void BtnImport_Click(object sender, RoutedEventArgs e)
@@ -156,6 +158,8 @@ namespace WPFTest
             }
             else
             {
+                
+
                 Thread t = Thread.CurrentThread;
                 if (t.IsBackground == true)
                 {
@@ -175,6 +179,33 @@ namespace WPFTest
                     dg1.ItemsSource = task.Result;
                 }
             }
+        }
+
+
+
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
+        {
+            #region 和谐 Aspose.Cell.dll 证书代码 -- 建议放在 App.xaml.cs Startup 中
+
+            if (Util.Excel.ExcelUtils_Aspose.IsLicensed() == false)
+            {
+                Util.Excel.ExcelUtils_Aspose.InitializeAsposeCells(); // 执行 和谐 Aspose.Cell.dll 证书代码
+
+                if (Util.Excel.ExcelUtils_Aspose.IsLicensed() == false)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+
+            #endregion
+
+            DataTable dt = (dg1.ItemsSource as List<TestAposeModelSheet3>).ToDataTable();
+            var ds = new System.Data.DataSet();
+            ds.Tables.Add(dt);
+            var xlsxPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"{DateTime.Now.ToString("yyyy_MM_dd__HH_mm_ss")}.xlsx");
+            Util.Excel.ExcelUtils_Aspose.DataSet2ExcelStepByStep_StaticMethod(xlsxPath, ds);
+
+            MessageBox.Show("导出成功");
         }
     }
 

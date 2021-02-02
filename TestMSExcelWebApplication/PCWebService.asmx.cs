@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Text;
-using Util.WebServiceModel;
+using Util.WebService;
 
 namespace TestMSExcelWebApplication
 {
@@ -36,7 +36,7 @@ namespace TestMSExcelWebApplication
 
             System.Data.DataTable dt = Util.Excel.ExcelUtils_Aspose.Excel2DataTable
                 (
-                    filePath: saveFilePath,
+                    path: saveFilePath,
                     exportColumnName: false
                 );
 
@@ -59,7 +59,7 @@ namespace TestMSExcelWebApplication
 
             dt = Util.Excel.ExcelUtils_Aspose.Excel2DataTable
                 (
-                    filePath: saveFilePath,
+                    path: saveFilePath,
                     exportColumnName: false
                 );
 

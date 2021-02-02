@@ -13,15 +13,20 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Button
             x:Name="btnImport"
-            Height="40">
-            引用
-        </Button>
+            Height="40"
+            Content="导入" />
         <DataGrid
             x:Name="dg1"
             Grid.Row="1"
             AutoGenerateColumns="True" />
+        <Button
+            x:Name="btnExport"
+            Grid.Row="2"
+            Height="40"
+            Content="导出" />
     </Grid>
 </Window>
